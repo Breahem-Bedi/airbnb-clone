@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ReactMapGL, {Marker, Popup} from "react-map-gl";
 import getCenter from 'geolib/es/getCenter';
+import InfoCard from "./InfoCard";
+import PopupCard from "./PopupCard";
 
 function Map({ searchResults }) {
     
@@ -51,7 +53,14 @@ function Map({ searchResults }) {
                             latitude={result.lat}
                             longitude={result.long}
                         >
-                            {result.title}
+                        <PopupCard
+                            img={result.img}
+                            location={result.location}
+                            title={result.title}
+                            star={result.star}
+                            price={result.price}
+                            total={result.total}
+                        />
                         </Popup>
                     ) : (
                         false
