@@ -39,6 +39,7 @@ function Search({ searchResults }) {
                                     star={star}
                                     price={price}
                                     total={total}
+                                    // onClick={}
 
                                 />
                             ))}
