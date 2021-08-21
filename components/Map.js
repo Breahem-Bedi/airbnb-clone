@@ -40,7 +40,7 @@ function Map({ searchResults }) {
                     >
                         <p
                             onClick={() => setSelectedLocation(result)}
-                            className="cursor-pointer text-2xl animate-bounce text-red-500"
+                            className="cursor-pointer text-2xl animate-bounce text-red-500 z-10"
                         >
                             <svg className="w-6 h-6" 
                                 fill="currentColor" 
@@ -57,6 +57,7 @@ function Map({ searchResults }) {
                     </Marker>
                     {selectedLocation.long === result.long ? (
                         <Popup
+                            className="z-20"
                             closeOnClick={true} 
                             onClose = {() => setSelectedLocation({})}
                             latitude={result.lat}
@@ -80,4 +81,4 @@ function Map({ searchResults }) {
     )
 }
 
-export default Map
+export default Map;
